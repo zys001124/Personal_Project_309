@@ -1,0 +1,89 @@
+body{
+    margin:0px;
+    font-family: cursive;
+}
+
+#background_wrapper{
+    background-image: url("https://media-assets-05.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-10557-netflixa--default--1280.jpg");
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#introduction{
+    z-index: -1;
+    background-color: rgba(54, 57, 61, 0.9);
+    width: 900px;
+    height: 530px;
+    text-align: center;
+    margin-top: 200px;
+    margin-left: 510px;
+    display: flex;
+    flex-direction: column;
+}
+
+#description_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#description{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 590px;
+    color: white;
+    word-break: break-word;
+}
+
+#Title{
+    font-size: 7.5rem;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #12c441, #c48c12 , #ff00c4, #ff0000);
+    background-size: 400%;
+    letter-spacing: 5px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 30s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+
+#navB{
+    margin-top: 50px;
+}
+
+#navB > a{
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    border: 2px groove white;
+    padding: 8px;
+    transition: 600ms ease-in-out;
+}
+
+#navB > a:hover{
+    color: orange;
+    box-shadow: 0 0 10px;
+    
+}
+
+#footer{
+    color: white;
+    font-size: 0.78rem;
+    bottom: 2px;
+    position: absolute;
+    right: 3px;
+}

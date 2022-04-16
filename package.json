@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "js-library-zhan6444",
+  "description": "",
+  "version": "1.0.0",
+  "main": "GammaJS.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc309-winter-2022/js-library-zhan6444.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc309-winter-2022/js-library-zhan6444/issues"
+  },
+  "homepage": "https://github.com/csc309-winter-2022/js-library-zhan6444#readme"
+}

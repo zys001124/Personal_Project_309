@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>GammaJS Documentation</title>
+        <link rel="stylesheet" type="text/css" href="./../documentation.css">
+
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <div id="header_box">
+                <div id="logo">
+                    <a href="/" style="text-decoration: none; cursor: pointer;">
+                        <h1 id="Title"> GammaJS </h1>
+                    </a>                </div>
+                <nav id="header_nav">
+                    <a href="/examples">Examples</a>
+                    <a href="/documentation" style="color: orange; border-bottom: 3px groove black;">Documentation</a>
+                    <a href="https://github.com/zys001124/Personal_Project_309">Download</a>
+                </nav>
+            </div>
+        </header>
+        <div id="main_content">
+            <div id="Getting_Started">
+                <h1 style="color:orange;">Getting Started</h1>
+                <pre id="start_instruction">
+    <span class="green"># To get started, first download and put the GammaJS.js file inside your working directory. <br>
+    # Make sure jquery is installed and if not, run</span> <span class="lightblue">npm i jquery</span><span class="green"> in the terminal. <br>
+    # Then in the html file which you want to use GammaJS, type in both<br> </span>
+        &lt<span class="darkblue">script</span> <span class="lightblue">defer type</span>=<span class="redish">"text/javascript"</span> <span class="lightblue">src</span>=<span class="redish">'./&ltYOUR_DIRECTORY&gt/GammaJS.js'</span>&gt&lt/<span class="darkblue">script</span>&gt <br>
+        &lt<span class="darkblue">script</span> <span class="lightblue">defer <span class="lightblue">src</span></span>=</span> <span class="redish">"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"</span>&gt&lt/s<span class="darkblue">script</span>&gt <br>
+    <span class="green"># in the head section. <br>
+    # Now you have successfully installed the GammaJS library, start using all its funcionalities in the corresponding javascript file <br>
+    # that modifies the html file which you have just put the scripts into.</span>
+                </pre>
+            </div> 
+
+            <div id="functions">
+                <h1>Methods</h1>
+                <h2 class="subtitle">All the global methods available.</h2>
+                <h3 style="font-size: 1.1rem; line-height: 1.5rem;">To get the methods working, the corresponding generator, which are <span class="yellow">MusicGenerator</span>, <span class="yellow">MovieGenerator</span>, 
+                    <span class="yellow">GameGenerator</span>, <span class="yellow">BookGenerator</span>, would have to be <br> initiated first, as shown in the examples.</h3>
+                <p>IMPORTANT: All parameters(except "popup" for the createNewProfile methods) are required for the methods to work and must be filled in the correct order as listed.</p>
+                <div id="table_wrapper" style="width: 1600px;">
+                    <table style="border-collapse: collapse; width: 100%;">
+                        <tbody>
+                            <tr style="border-bottom: 1px groove black;">
+                                <th>Generator</th>
+                                <th style="width:20%;">Method</th>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;">
+                                <td class="generators"> MusicGenerator</td>
+                                <td class="functions"> createNewProfile</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>parent: the DOM element which the new profile would be added to</li>
+                                        <li>template: the template of the new profile
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                                <li>Choose from 1-4, any other number would result in default template of #1 </li>
+                                            </ul>
+                                        </li>
+                                        <li>musicPic: picture of the music content
+                                            <ul>
+                                                <li>Type: String</li>
+                                                <li>'&ltURL TO THE PICTURE OF THE MUSIC&gt'</li>
+                                            </ul>
+                                        </li> 
+                                        <li>musicname: name of the music content
+                                            <ul>
+                                                <li>Type: JSON</li>
+                                                <li>{"name": '&ltNAME OF THE MUSIC&gt', "link": &lt'THE LINK TO IT'&gt}</li>
+                                            </ul>
+                                        </li>
+                                        <li>musicartist: artist(s) of the music content
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"artist": '&ltARTIST OF THE MUSIC&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>musicgenre: genre(s) of the music content
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"genre": '&ltGENRE OF THE MUSIC&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>musicrating: rating of the music content
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                            </ul>
+                                        </li>
+                                        <li>musicintroduction: introduction of the music content
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>reviewLink: link to the review page for the music content
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>popup: value to determine whether to show the popout window
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                                <li>Choose between 0 and 1, 0 means no-popout and 1 means has popout </li>
+                                                <li>If this field is not filled out by the user, it would be treated as value 0 </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="description">Create a new profile of a music content with the information provided.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;">
+                                <td class="generators"> MusicGenerator</td>
+                                <td class="functions"> addToCollection</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>musicPic: picture of the music content
+                                            <ul>
+                                                <li>Type: String</li>
+                                                <li>'&ltURL TO THE PICTURE OF THE MUSIC&gt'</li>
+                                            </ul>
+                                        </li> 
+                                        <li>musicname: name of the music content
+                                            <ul>
+                                                <li>Type: JSON</li>
+                                                <li>{"name": '&ltNAME OF THE MUSIC&gt', "link": &lt'THE LINK TO IT'&gt}</li>
+                                            </ul>
+                                        </li>
+                                        <li>musicartist: artist(s) of the music content
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"artist": '&ltARTIST OF THE MUSIC&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>musicgenre: genre(s) of the music content
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"genre": '&ltGENRE OF THE MUSIC&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>musicrating: rating of the music content
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                            </ul>
+                                        </li>
+                                        <li>musicintroduction: introduction of the music content
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>reviewLink: link to the review page for the music content
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="description">Add a new music content to this MusicGenerator which could later be used in comparion or carousel.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;  height: 80px;">
+                                <td class="generators"> MusicGenerator</td>
+                                <td class="functions"> createNewSlideshow</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>parent: the DOM element which the new carousel would be added to</li>
+                                    </ul>
+                                </td>
+                                <td class="description">Create a new carousel with the music contents already being added to this MusicGenerator.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;">
+                                <td class="generators"> MovieGenerator</td>
+                                <td class="functions"> createNewProfile</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>parent: the DOM element which the new profile would be added to</li>
+                                        <li>template: the template of the new profile
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                                <li>Choose from 1-3, any other number would result in default template of #1 </li>
+                                            </ul>
+                                        </li>
+                                        <li>moviePic: poster of the movie
+                                            <ul>
+                                                <li>Type: String</li>
+                                                <li>'&ltURL TO THE POSTER OF THE MOVIE&gt'</li>
+                                            </ul>
+                                        </li> 
+                                        <li>moviename: name of the movie
+                                            <ul>
+                                                <li>Type: JSON</li>
+                                                <li>{"name": '&ltNAME OF THE MOVIE&gt', "link": &lt'THE LINK TO IT'&gt}</li>
+                                            </ul>
+                                        </li>
+                                        <li>movieactor: actor(s) of the movie
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"actor": '&ltACTOR OF THE MOVIE&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>moviedirector: director(s) of the movie
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"director": '&ltDIRECTOR OF THE MOVIE&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>moviegenre: genre(s) of the movie
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"genre": '&ltGENRE OF THE MOVIE&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>movientroduction: introduction of the movie
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>movierating: rating of the movie
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                            </ul>
+                                        </li>
+                                        <li>reviewLink: link to the review page for the movie
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>popup: value to determine whether to show the popout window
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                                <li>Choose between 0 and 1, 0 means no-popout and 1 means has popout </li>
+                                                <li>If this field is not filled out by the user, it would be treated as value 0 </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="description">Create a new profile of a movie with the information provided.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;">
+                                <td class="generators"> MovieGenerator</td>
+                                <td class="functions"> addToCollection</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>moviePic: poster of the movie
+                                            <ul>
+                                                <li>Type: String</li>
+                                                <li>'&ltURL TO THE POSTER OF THE MOVIE&gt'</li>
+                                            </ul>
+                                        </li> 
+                                        <li>moviename: name of the movie
+                                            <ul>
+                                                <li>Type: JSON</li>
+                                                <li>{"name": '&ltNAME OF THE MOVIE&gt', "link": &lt'THE LINK TO IT'&gt}</li>
+                                            </ul>
+                                        </li>
+                                        <li>movieactor: actor(s) of the movie
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"actor": '&ltACTOR OF THE MOVIE&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>moviedirector: director(s) of the movie
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"director": '&ltDIRECTOR OF THE MOVIE&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>moviegenre: genre(s) of the movie
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"genre": '&ltGENRE OF THE MOVIE&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>movientroduction: introduction of the movie
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>movierating: rating of the movie
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                            </ul>
+                                        </li>
+                                        <li>reviewLink: link to the review page for the movie
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="description">Add a new movie to this MovieGenerator which could later be used in comparion or carousel..</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;  height: 80px;">
+                                <td class="generators"> MovieGenerator</td>
+                                <td class="functions"> createNewSlideshow</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>parent: the DOM element which the new carousel would be added to</li>
+                                    </ul>
+                                </td>
+                                <td class="description">Create a new carousel with the movies already being added to this MovieGenerator.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;">
+                                <td class="generators"> GameGenerator</td>
+                                <td class="functions"> createNewProfile</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>parent: the DOM element which the new profile would be added to</li>
+                                        <li>template: the template of the new profile
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                                <li>Choose from 1-3, any other number would result in default template of #1 </li>
+                                            </ul>
+                                        </li>
+                                        <li>gamePic: poster of the game
+                                            <ul>
+                                                <li>Type: String</li>
+                                                <li>'&ltURL TO THE POSTER OF THE GAME&gt'</li>
+                                            </ul>
+                                        </li> 
+                                        <li>gamename: name of the game
+                                            <ul>
+                                                <li>Type: JSON</li>
+                                                <li>{"name": '&ltNAME OF THE GAME&gt', "link": &lt'THE LINK TO IT'&gt}</li>
+                                            </ul>
+                                        </li>
+                                        <li>gamedeveloper: developer(s) of the game
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"developer": '&ltDEVELOPER OF THE GAME&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>gameplatform: platform(s) of the game
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"platform": '&ltPLATFORM OF THE GAME&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>gamegenre: genre(s) of the game
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"genre": '&ltGENRE OF THE GAME&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>gameintro: introduction of the game
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>gamerating: rating of the game
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                            </ul>
+                                        </li>
+                                        <li>reviewLink: link to the review page for the game
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>popup: value to determine whether to show the popout window
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                                <li>Choose between 0 and 1, 0 means no-popout and 1 means has popout </li>
+                                                <li>If this field is not filled out by the user, it would be treated as value 0 </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="description">Create a new profile of a game with the information provided.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;">
+                                <td class="generators"> GameGenerator</td>
+                                <td class="functions"> addToCollection</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>gamePic: poster of the game
+                                            <ul>
+                                                <li>Type: String</li>
+                                                <li>'&ltURL TO THE POSTER OF THE GAME&gt'</li>
+                                            </ul>
+                                        </li> 
+                                        <li>gamename: name of the game
+                                            <ul>
+                                                <li>Type: JSON</li>
+                                                <li>{"name": '&ltNAME OF THE GAME&gt', "link": &lt'THE LINK TO IT'&gt}</li>
+                                            </ul>
+                                        </li>
+                                        <li>gamedeveloper: developer(s) of the game
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"developer": '&ltDEVELOPER OF THE GAME&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>gameplatform: platform(s) of the game
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"platform": '&ltPLATFORM OF THE GAME&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>gamegenre: genre(s) of the game
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"genre": '&ltGENRE OF THE GAME&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>gameintro: introduction of the game
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>gamerating: rating of the game
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                            </ul>
+                                        </li>
+                                        <li>reviewLink: link to the review page for the game
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="description">Add a new game to this GameGenerator which could later be used in comparion or carousel..</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black; height: 80px;">
+                                <td class="generators"> GameGenerator</td>
+                                <td class="functions"> createNewSlideshow</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>parent: the DOM element which the new carousel would be added to</li>
+                                    </ul>
+                                </td>
+                                <td class="description">Create a new carousel with the games already being added to this GameGenerator.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;">
+                                <td class="generators"> BookGenerator</td>
+                                <td class="functions"> createNewProfile</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>parent: the DOM element which the new profile would be added to</li>
+                                        <li>template: the template of the new profile
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                                <li>Choose from 1-4, any other number would result in default template of #2 </li>
+                                            </ul>
+                                        </li>
+                                        <li>bookPic: cover of the book
+                                            <ul>
+                                                <li>Type: String</li>
+                                                <li>'&ltURL TO THE COVER OF THE Book&gt'</li>
+                                            </ul>
+                                        </li> 
+                                        <li>bookname: name of the book
+                                            <ul>
+                                                <li>Type: JSON</li>
+                                                <li>{"name": '&ltNAME OF THE Book&gt', "link": &lt'THE LINK TO IT'&gt}</li>
+                                            </ul>
+                                        </li>
+                                        <li>bookauthor: author(s) of the book
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"author": '&ltAUTHOR OF THE Book&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>bookgenre: genre(s) of the book
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"genre": '&ltGENRE OF THE Book&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>bookIntro: introduction of the book
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>bookrating: rating of the book
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                            </ul>
+                                        </li>
+                                        <li>reviewLink: link to the review page for the book
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>popup: value to determine whether to show the popout window
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                                <li>Choose between 0 and 1, 0 means no-popout and 1 means has popout </li>
+                                                <li>If this field is not filled out by the user, it would be treated as value 0 </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="description">Create a new profile of a book with the information provided.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px groove black;">
+                                <td class="generators"> BookGenerator</td>
+                                <td class="functions"> addToCollection</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>bookPic: cover of the book
+                                            <ul>
+                                                <li>Type: String</li>
+                                                <li>'&ltURL TO THE COVER OF THE Book&gt'</li>
+                                            </ul>
+                                        </li> 
+                                        <li>bookname: name of the book
+                                            <ul>
+                                                <li>Type: JSON</li>
+                                                <li>{"name": '&ltNAME OF THE Book&gt', "link": &lt'THE LINK TO IT'&gt}</li>
+                                            </ul>
+                                        </li>
+                                        <li>bookauthor: author(s) of the book
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"author": '&ltAUTHOR OF THE Book&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>bookgenre: genre(s) of the book
+                                            <ul>
+                                                <li>Type: Array[JSON]</li>
+                                                <li>[{"genre": '&ltGENRE OF THE Book&gt', "link": &lt'THE LINK TO IT'&gt}]</li>
+                                            </ul>
+                                        </li>
+                                        <li>bookIntro: introduction of the book
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                        <li>bookrating: rating of the book
+                                            <ul>
+                                                <li>Type: Integer </li>
+                                            </ul>
+                                        </li>
+                                        <li>reviewLink: link to the review page for the book
+                                            <ul>
+                                                <li>Type: String </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="description">Add a new book to this BookGenerator which could later be used in comparion or carousel..</td>
+                            </tr>
+                            <tr>
+                                <td class="generators"> BookGenerator</td>
+                                <td class="functions"> createNewSlideshow</td>
+                                <td class="parameters">
+                                    <ul>
+                                        <li>parent: the DOM element which the new carousel would be added to</li>
+                                    </ul>
+                                </td>
+                                <td class="description">Create a new carousel with the books already being added to this BookGenerator.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="complete_examples">
+                <h1>Complete Examples</h1>
+                <h2>MusicGenerator Methods Demonstration</h2>
+                <div style="display: inherit; background-color: #f5f2f0; max-width: 1580px; padding: 10px 20px 10px 20px;">
+                    <pre style="margin: 0px; overflow: auto;">
+                        <code>
+<span class="darkblue">const</span> <span class="lightblue"><span class="lightblue">musicItems</span></span> = <span class="lightlightblue">document</span>.<span class="yellow">getElementById</span>(<span class="redish">'musicCards_display'</span>)
+<span class="darkblue">const</span> <span class="lightblue">mg</span> = <span class="darkblue">new</span> <span class="yellow">MusicGenerator</span>()
+<span class="lightblue">mg</span>.<span class="yellow">createNewProfile</span>(<span class="lightblue">musicItems</span>, 1, 'https://upload.wikimedia.org/wikipedia/en/d/d4/OasisDefinitelyMaybealbumcover.jpg', {"name": 'Definitely Maybe', "link": "https://en.wikipedia.org/wiki/Definitely_Maybe"}, [{"artist": 'Oasis', "link": "https://en.wikipedia.org/wiki/Oasis_(band)"}], [{"genre": 'Rock', "link": 'https://en.wikipedia.org/wiki/Rock_music'},  {"genre": 'Britpop', "link": 'https://en.wikipedia.org/wiki/Britpop'}], 10, 'Definitely Maybe is the debut studio album by English rock band Oasis, released by Creation Records on 29 August 1994. Oasis booked Monnow Valley Studio near Rockfield in late 1993 to record the album and worked with producer Dave Batchelor, whom band member Noel Gallagher knew from his days working as a roadie for the Inspiral Carpets, though sessions were unsatisfactory and Batchelor was subsequently fired.', '', 1)
+<span class="lightblue">mg</span>.<span class="yellow">addToCollection</span>('https://upload.wikimedia.org/wikipedia/en/1/15/Police-album-zenyattamondatta.jpg', {"name": 'Zenyatta Mondatta', "link": "https://en.wikipedia.org/wiki/Zenyatta_Mondatta"}, [{"artist": 'The Police', "link": "https://en.wikipedia.org/wiki/The_Police"}], [{"genre": 'Rock', "link": 'https://en.wikipedia.org/wiki/Rock_music'},  {"genre": 'Reggae', "link": 'https://en.wikipedia.org/wiki/Reggae'}], 10, 'Zenyatta Mondatta (stylised as Zenyattà Mondatta on the album cover artwork) is the third studio album by British rock band the Police, released on 3 October 1980 by A&M Records. It was co-produced by the band and Nigel Gray. Zenyatta Mondatta was released to commercial success, reaching number one on the UK Albums Chart and producing the hit singles "Don\'t Stand So Close to Me" and \"De Do Do Do, De Da Da Da\". The album won the band two Grammy Awards: Best Rock Performance by a Duo or Group with Vocal for \"Don\'t Stand So Close to Me\" and Best Rock Instrumental Performance for \"Behind My Camel".', '')
+<span class="lightblue">mg</span>.<span class="yellow">createNewSlideshow</span>(<span class="lightblue">musicItems</span>)
+                        </code>
+                    </pre>
+                </div>
+                <h2>MovieGenerator Methods Demonstration</h2>
+                <div style="display: inherit; background-color: #f5f2f0; max-width: 1580px; padding: 10px 20px 10px 20px;">
+                    <pre style="margin: 0px; overflow: auto;">
+                        <code>
+<span class="darkblue">const</span> <span class="lightblue"><span class="lightblue">movieItems</span></span> = <span class="lightlightblue">document</span>.<span class="yellow">getElementById</span>(<span class="redish">'movieCards_display'</span>)
+<span class="darkblue">const</span> <span class="lightblue">mg</span> = <span class="darkblue">new</span> <span class="yellow">MovieGenerator</span>()
+<span class="lightblue">mg</span>.<span class="yellow">createNewProfile</span>(<span class="lightblue">movieItems</span>, 1, 'https://flxt.tmsimg.com/assets/p7825626_p_v10_af.jpg', {"name": 'Inception', "link": "https://www.imdb.com/title/tt1375666/"}, [{"actor": 'Leonardo DiCaprio', "link": 'https://www.imdb.com/name/nm0000138/?ref_=tt_ov_st'}, {"actor": 'Joseph Gordon-Levitt', "link": 'https://www.imdb.com/name/nm0330687/?ref_=tt_ov_st'}], [{"director": 'Christopher Nolan', "link": 'https://www.imdb.com/name/nm0634240/?ref_=tt_ov_dr'}], [{"genre": 'Action', "link": 'https://www.imdb.com/search/title/?genres=action&explore=title_type,genres&ref_=tt_ov_inf'},  {"genre": 'Sci-Fi', "link": 'https://www.imdb.com/search/title/?genres=sci-fi&explore=title_type,genres&ref_=tt_ov_inf'}], 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.', 8.7, '', 1)
+<span class="lightblue">mg</span>.<span class="yellow">addToCollection</span>('https://m.media-amazon.com/images/M/MV5BNDIzNDU0YzEtYzE5Ni00ZjlkLTk5ZjgtNjM3NWE4YzA3Nzk3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg', {"name": 'Fight Club', "link": "https://www.imdb.com/title/tt0137523/"},  [{"actor": 'Brad Pitt', "link": 'https://www.imdb.com/name/nm0000093/?ref_=tt_ov_st'}, {"actor": 'Edward Norton', "link": 'https://www.imdb.com/name/nm0001570/?ref_=tt_ov_st'}], [{"director": 'David Fincher', "link": 'https://www.imdb.com/name/nm0000399/?ref_=tt_ov_dr'}], [{"genre": 'Drama', "link": 'https://www.imdb.com/search/title?genres=drama&explore=title_type,genres&ref_=tt_ov_inf'}], 'An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.', 8.7, '')
+<span class="lightblue">mg</span>.<span class="yellow">createNewSlideshow</span>(<span class="lightblue">movieItems</span>)
+                        </code>
+                    </pre>
+                </div>
+                <h2>GameGenerator Methods Demonstration</h2>
+                <div style="display: inherit; background-color: #f5f2f0; max-width: 1580px; padding: 10px 20px 10px 20px;">
+                    <pre style="margin: 0px; overflow: auto;">
+                        <code>
+<span class="darkblue">const</span> <span class="lightblue"><span class="lightblue">gameItems</span></span> = <span class="lightlightblue">document</span>.<span class="yellow">getElementById</span>(<span class="redish">'gameCards_display'</span>)
+<span class="darkblue">const</span> <span class="lightblue">gg</span> = <span class="darkblue">new</span> <span class="yellow">GameGenerator</span>()
+<span class="lightblue">gg</span>.<span class="yellow">createNewProfile</span>(<span class="lightblue">gameItems</span>, 1, 'https://image.api.playstation.com/vulcan/img/rnd/202201/2122/fkaKSuP564vnXkijecp8OYG8.jpg', {"name": 'Elden Ring', "link": 'https://en.wikipedia.org/wiki/Elden_Ring'}, [{"developer": 'FromSoftware', "link": 'https://en.wikipedia.org/wiki/FromSoftware'},], [{"platform": 'PC', "link": 'https://en.wikipedia.org/wiki/Personal_computer'}, {"platform": 'XBOX', "link": 'https://en.wikipedia.org/wiki/Xbox'}, {"platform": 'PS', "link": 'https://en.wikipedia.org/wiki/PlayStation'}], [{"genre": 'Action', "link": 'https://en.wikipedia.org/wiki/Action_game'}, {"genre": 'RPG', "link": 'https://en.wikipedia.org/wiki/Role-playing_game'}], 'THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.', 9.6, '', 1)
+<span class="lightblue">gg</span>.<span class="yellow">addToCollection</span>('https://upload.wikimedia.org/wikipedia/en/6/6e/CSGOcoverMarch2020.jpg', {"name": 'CSGO', "link": 'https://en.wikipedia.org/wiki/Counter-Strike:_Global_Offensive'}, [{"developer": 'VALVE', "link": 'https://en.wikipedia.org/wiki/Valve_Corporation'},], [{"platform": 'PC', "link": 'https://en.wikipedia.org/wiki/Personal_computer'}, {"platform": 'XBOX', "link": 'https://en.wikipedia.org/wiki/Xbox'}, {"platform": 'PS', "link": 'https://en.wikipedia.org/wiki/PlayStation'}], [{"genre": 'FPS', "link": 'https://en.wikipedia.org/wiki/First-person_shooter'}, {"genre": 'Multiplayer', "link": 'https://en.wikipedia.org/wiki/Multiplayer_video_game'}], 'Counter-Strike: Global Offensive (CS:GO) is a 2012 multiplayer first-person shooter developed by Valve and Hidden Path Entertainment. It is the fourth game in the Counter-Strike series. Developed for over two years, Global Offensive was released for Windows, macOS, Xbox 360, and PlayStation 3 in August 2012, and for Linux in 2014. Valve still regularly updates the game, both with smaller balancing patches and larger content additions.', 5.6, '')
+<span class="lightblue">gg</span>.<span class="yellow">createNewSlideshow</span>(<span class="lightblue">gameItems</span>)
+                        </code>
+                    </pre>
+                </div>
+                <h2>BookGenerator Methods Demonstration</h2>
+                <div style="display: inherit; background-color: #f5f2f0; max-width: 1580px; padding: 10px 20px 10px 20px;">
+                    <pre style="margin: 0px; overflow: auto;">
+                        <code>
+<span class="darkblue">const</span> <span class="lightblue"><span class="lightblue">bookItems</span></span> = <span class="lightlightblue">document</span>.<span class="yellow">getElementById</span>(<span class="redish">'bookCards_display'</span>)
+<span class="darkblue">const</span> <span class="lightblue">bg</span> = <span class="darkblue">new</span> <span class="yellow">BookGenerator</span>()
+<span class="lightblue">bg</span>.<span class="yellow">createNewProfile</span>(<span class="lightblue">bookItems</span>, 1, 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/The_Two_Towers_cover.gif/220px-The_Two_Towers_cover.gif', {"name": 'The Two Towers', "link": 'https://en.wikipedia.org/wiki/The_Two_Towers'}, [{"author": 'J.R.R. Tolkien', "link": 'https://en.wikipedia.org/wiki/J._R._R._Tolkien'}], [{"genre": 'Fantasy', "link": 'https://en.wikipedia.org/wiki/Fantasy'} ], 'While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron\'s new ally, Saruman, and his hordes of Isengard.', 8.8, '', 1)
+<span class="lightblue">bg</span>.<span class="yellow">addToCollection</span>('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/330px-The_Great_Gatsby_Cover_1925_Retouched.jpg', {"name": 'The Great Gatsby', "link": 'https://en.wikipedia.org/wiki/The_Great_Gatsby'}, [{"author": 'F. Scott Fitzgerald', "link": 'https://en.wikipedia.org/wiki/F._Scott_Fitzgerald'}], [{"genre": 'Tragedy', "link": 'https://en.wikipedia.org/wiki/Tragedy'} ], 'The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway\'s interactions with mysterious millionaire Jay Gatsby and Gatsby\'s obsession to reunite with his former lover, Daisy Buchanan.', 8.8, '')
+<span class="lightblue">bg</span>.<span class="yellow">createNewSlideshow</span>(<span class="lightblue">bookItems</span>)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p>GammaJS,created by Yaosheng Zhang, MIT license.</p>
+        </div>
+
+    </body>
+
+</html>
